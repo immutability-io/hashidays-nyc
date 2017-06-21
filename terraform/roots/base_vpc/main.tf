@@ -1,11 +1,11 @@
 provider "aws" {
-	region = "us-west-2"
+	region = "us-east-1"
 }
 
 terraform {
     backend "s3" {
         key = "vpc/terraform.tfstate"
-        region = "us-west-2"
+        region = "us-east-1"
     }
 }
 
@@ -16,7 +16,7 @@ variable "vpc_name" {
 
 variable "zone_name" {
 	type = "string"
-	default = "hashistack.gentec-systems.com"
+	default = "hashistack.immutability.io"
 }
 
 variable "cidr_block" {
@@ -31,16 +31,16 @@ module "vpc" {
 
 	vpc_name  = "${var.vpc_name}"
 	zone_name = "${var.zone_name}"
-    region = "us-west-2"
+    region = "us-east-1"
 
 	cidr_block = "${var.cidr_block}"
-	
+
 	private_subnets = [
 		"${cidrsubnet(var.cidr_block, 3, 5)}",
 		"${cidrsubnet(var.cidr_block, 3, 6)}",
 		"${cidrsubnet(var.cidr_block, 3, 7)}"
 	]
-	
+
 	public_subnets = [
 		"${cidrsubnet(var.cidr_block, 5, 0)}",
 		"${cidrsubnet(var.cidr_block, 5, 1)}",
@@ -93,4 +93,3 @@ output "s3_vpce_id" {
 output "cidr_block" {
 	value = "${module.vpc.cidr_block}"
 }
-

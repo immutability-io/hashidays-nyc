@@ -1,6 +1,6 @@
 PACKAGE_NAME = journald-cloudwatch-logs
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
 PACKAGE_VENDOR = Say Media
 PACKAGE_DESCRIPTION = Ships Cloudwatch Logs from Journald
 PACKAGE_SECTION = net

@@ -1,12 +1,12 @@
-BUCKET_REGION ?= us-west-2
+BUCKET_REGION ?= us-east-1
 STAGE_NAME ?= apt-hashistack-stage
-BUCKET_NAME ?= apt.hashistack.gentec-systems.com
+BUCKET_NAME ?= apt.hashistack.immutability.io
 
 CODENAME ?= xenial
 SUITE ?= stable
 COMPONENT ?= main
 
-APT_SIGNING_FINGERPRINT ?= C6398F90FA354C7FA2D411B82CE07C37E69C1453 
+APT_SIGNING_FINGERPRINT ?= C6398F90FA354C7FA2D411B82CE07C37E69C1453
 APT_KEY_DIRECTORY ?= $(HOME)/.
 
 # Do not edit below here

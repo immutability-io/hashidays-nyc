@@ -16,7 +16,7 @@ resource "tls_self_signed_cert" "root" {
 
 	subject {
 		common_name = "HashiStack Nomad Root CA"
-		organization = "Operator Error"
+		organization = "Cypherhat"
 		organizational_unit = "Operations"
 	}
 }

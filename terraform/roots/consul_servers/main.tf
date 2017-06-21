@@ -1,5 +1,5 @@
 provider "aws" {
-	region = "us-west-2"
+	region = "us-east-1"
 }
 
 variable "state_bucket" {
@@ -9,7 +9,7 @@ variable "state_bucket" {
 terraform {
     backend "s3" {
         key = "consul_servers/terraform.tfstate"
-        region = "us-west-2"
+        region = "us-east-1"
     }
 }
 
@@ -43,14 +43,14 @@ module "asg_dns" {
 	source = "../../modules/asg-route53"
 
 	asg_name = "${module.consul.asg_name}"
-	region = "us-west-2"
+	region = "us-east-1"
 }
 
 data "terraform_remote_state" "vpc" {
 	backend = "s3"
 	config {
         bucket = "${var.state_bucket}"
-		region = "us-west-2"
+		region = "us-east-1"
         key = "vpc/terraform.tfstate"
 	}
 }
@@ -59,7 +59,7 @@ data "terraform_remote_state" "bootstrap" {
 	backend = "s3"
 	config {
         bucket = "${var.state_bucket}"
-		region = "us-west-2"
+		region = "us-east-1"
         key = "bootstrap/terraform.tfstate"
 	}
 }

@@ -2,11 +2,11 @@ CONSUL_VERSION = 0.8.3
 
 PACKAGE_NAME = consul-bootstrap-aws
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
-PACKAGE_VENDOR = Operator Error
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
+PACKAGE_VENDOR = Cypherhat
 PACKAGE_DESCRIPTION = Consul Bootstrapping for AWS
 PACKAGE_SECTION = net
-PACKAGE_HOMEPAGE = https://www.operator-error.com
+PACKAGE_HOMEPAGE = https://www.immutability.io
 PACKAGE_DEP_FLAGS = --depends 'awscli >= 1.11.13' \
 					--depends 'curl >= 7.47.0' \
 					--depends 'gomplate >= 1.6.0' \
@@ -55,5 +55,3 @@ clean-all: ## Clean sources including downloaded sources
 help:
 	@echo "Valid targets:"
 	@grep -E '^[a-zA-Z_-]+%*:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
-
-

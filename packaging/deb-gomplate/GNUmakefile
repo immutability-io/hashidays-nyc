@@ -1,6 +1,6 @@
 PACKAGE_NAME = gomplate
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
 PACKAGE_VENDOR = Dave Henderson
 PACKAGE_DESCRIPTION = Command Line Golang Template Processor 
 PACKAGE_SECTION = admin

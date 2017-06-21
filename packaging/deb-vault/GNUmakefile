@@ -1,6 +1,6 @@
 PACKAGE_NAME = vault
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
 PACKAGE_VENDOR = HashiCorp
 PACKAGE_DESCRIPTION = Secrets Management Platform
 PACKAGE_SECTION = net

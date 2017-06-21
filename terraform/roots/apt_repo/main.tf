@@ -1,5 +1,5 @@
 provider "aws" {
-	region = "us-west-2"
+	region = "us-east-1"
 }
 
 variable "state_bucket" {
@@ -9,7 +9,7 @@ variable "state_bucket" {
 terraform {
     backend "s3" {
         key = "apt_repo/terraform.tfstate"
-        region = "us-west-2"
+        region = "us-east-1"
     }
 }
 
@@ -17,7 +17,7 @@ data "terraform_remote_state" "vpc" {
 	backend = "s3"
 	config {
         bucket = "${var.state_bucket}"
-        region = "us-west-2"
+        region = "us-east-1"
 		key = "vpc/terraform.tfstate"
 	}
 }

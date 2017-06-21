@@ -9,7 +9,7 @@ resource "tls_cert_request" "intermediate" {
 
 	subject {
 		common_name = "HashiStack Vault Intermediate CA"
-		organization = "Operator Error"
+		organization = "Cypherhat"
 		organizational_unit = "Operations"
 	}
 }

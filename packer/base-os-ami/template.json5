@@ -2,7 +2,7 @@
 	variables: {
 		aws_access_key_id: "{{ env `AWS_ACCESS_KEY_ID` }}",
 		aws_secret_access_key: "{{ env `AWS_SECRET_ACCESS_KEY` }}",
-		region: "us-west-2",
+		region: "us-east-1",
 		buildtime: "{{isotime \"2006-01-02-1504\"}}",
 	},
 
@@ -40,11 +40,11 @@
 
 		run_tags: {
 			Name: "Packer Builder - ZFS Root Ubuntu",
-			Project: "operator-error.com",
+			Project: "immutability.io",
 		},
 		run_volume_tags: {
 			Name: "Packer Builder - ZFS Root Ubuntu",
-			Project: "operator-error.com",
+			Project: "immutability.io",
 		},
 
 		ami_name: "ubuntu-xenial-16.04-amd64-zfs-server-{{ user `buildtime` }}",
@@ -66,7 +66,7 @@
 	provisioners: [
 		{
 			type: "file",
-			source: "files/sources-us-west-2.list",
+			source: "files/sources-us-east-1.list",
 			destination: "/tmp/sources.list",
 		},
 		{

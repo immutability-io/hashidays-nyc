@@ -1,6 +1,6 @@
 PACKAGE_NAME = consul
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
 PACKAGE_VENDOR = HashiCorp
 PACKAGE_DESCRIPTION = Service Discovery and Fault Checking
 PACKAGE_SECTION = net
@@ -72,5 +72,3 @@ clean-all: ## Clean sources including downloaded sources
 help:
 	@echo "Valid targets:"
 	@grep -E '^[a-zA-Z_-]+%*:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
-
-

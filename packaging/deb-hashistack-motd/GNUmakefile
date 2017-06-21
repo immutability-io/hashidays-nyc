@@ -1,7 +1,7 @@
 PACKAGE_NAME = hashistack-motd
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
-PACKAGE_VENDOR = Operator Error
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
+PACKAGE_VENDOR = Cypherhat
 PACKAGE_DESCRIPTION = Dynamic Message Of The Day
 PACKAGE_SECTION = net
 PACKAGE_DEP_FLAGS = --depends 'curl >= 7.47.0'

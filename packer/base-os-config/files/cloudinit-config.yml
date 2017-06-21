@@ -67,7 +67,7 @@ system_info:
    default_user:
      name: ops
      lock_passwd: true
-     gecos: "Operator Error Operations"
+     gecos: "Cypherhat Operations"
      primary-group: ops
      groups: [adm, audio, cdrom, dialout, dip, floppy, lxd, netdev, plugdev, sudo, video]
      sudo: ["ALL=(ALL) NOPASSWD:ALL"]

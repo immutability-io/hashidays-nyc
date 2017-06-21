@@ -1,7 +1,7 @@
 PACKAGE_NAME = openssh-ca-config
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
-PACKAGE_VENDOR = Operator Error
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
+PACKAGE_VENDOR = Cypherhat
 PACKAGE_DESCRIPTION = OpenSSH and CA Configuration
 PACKAGE_SECTION = net
 PACKAGE_HOMEPAGE = https://www.openssh.com

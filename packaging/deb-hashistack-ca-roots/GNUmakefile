@@ -1,7 +1,7 @@
 PACKAGE_NAME = hashistack-ca-roots
 PACKAGE_ARCH = amd64
-PACKAGE_MAINTAINER = Operator Error <ops@operator-error.com>
-PACKAGE_VENDOR = Operator Error
+PACKAGE_MAINTAINER = Cypherhat <ops@immutability.io>
+PACKAGE_VENDOR = Cypherhat
 PACKAGE_DESCRIPTION = HashiStack CA Roots
 PACKAGE_SECTION = net
 PACKAGE_HOMEPAGE = https://www.hashicorp.com

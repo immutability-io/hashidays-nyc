@@ -1,7 +1,7 @@
 default: help
 
-STATE_BUCKET = hashistack-aws-state
-REGION = us-west-2
+STATE_BUCKET = immutability-hashistack-state
+REGION = us-east-1
 
 ACTION ?= plan
 

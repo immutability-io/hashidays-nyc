@@ -1,24 +1,24 @@
 provider "aws" {
-    region = "us-west-2"
+    region = "us-east-1"
 }
 
 terraform {
     backend "s3" {
         key = "bootstrap/terraform.tfstate"
-        region = "us-west-2"
+        region = "us-east-1"
     }
 }
 
 module "bootstrap" {
     source = "../../modules/bootstrap/"
 
-    aws_region = "us-west-2"
+    aws_region = "us-east-1"
     environment_name = "HashiStack AWS Staging"
 }
 
 resource "aws_route53_zone" "external" {
-    name = "hashistack.gentec-systems.com"
-    comment = "Public zone for hashistack.gentec-systems.com. Managed by Terraform."
+    name = "hashistack.immutability.io"
+    comment = "Public zone for hashistack.immutability.io. Managed by Terraform."
 }
 
 output "hosted_zone_id" {
@@ -72,4 +72,3 @@ output "log_bucket_arn" {
 output "log_bucket_name" {
 	value = "${module.bootstrap.log_bucket_name}"
 }
-

@@ -1,11 +1,11 @@
 # HashiCorp Stack on AWS
 
-This repository is the accompanying code for James Nugent's talk at HashiDays
+This repository is the accompanying code (with a few changes*) for James Nugent's talk at HashiDays
 New York 2017. It demonstrates deploying the HashiCorp runtime stack (Consul,
 Nomad and Vault) in a production quality fashion on AWS.
 
 *Note: The code in this repository will provision real resources in AWS which
-cost real money! Be careful!*
+cost real money! Be careful! The **changes** were to the names (Operator Error --> Immutability, to protect the innocent), and `us-west-2` to `us-east-1` to stay local.*
 
 ## Usage
 
@@ -193,11 +193,11 @@ bits), and `0` for expiry time, indicating an infinite lifetime.
 Use something recognizable for real name, email address and comment:
 
 ```
-Real name: Operator Error Operations
-Email address: ops@operator-error.com
+Real name: Cypherhat Operations
+Email address: ops@immutability.io
 Comment: APT Repository Signing Key
 You selected this USER-ID:
-    "Operator Error Operations (APT Repository Signing Key) <ops@operator-error.com>"
+    "Cypherhat Operations (APT Repository Signing Key) <ops@immutability.io>"
 ```
 
 Use a secure (i.e. password-manager managed) passphrase for the key pair.
@@ -214,7 +214,7 @@ gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
 -------------------------------
 pub   rsa2048 2017-05-12 [SC]
       C6398F90FA354C7FA2D411B82CE07C37E69C1453
-uid           [ultimate] Operator Error Operations (APT Repository Signing Key) <ops@operator-error.com>
+uid           [ultimate] Cypherhat Operations (APT Repository Signing Key) <ops@immutability.io>
 sub   rsa2048 2017-05-12 [E]
 ```
 
@@ -227,7 +227,7 @@ $ gpg --list-secret-keys
 -------------------------------
 sec   rsa2048 2017-05-12 [SC]
       C6398F90FA354C7FA2D411B82CE07C37E69C1453
-uid           [ultimate] Operator Error Operations (APT Repository Signing Key) <ops@operator-error.com>
+uid           [ultimate] Cypherhat Operations (APT Repository Signing Key) <ops@immutability.io>
 ssb   rsa2048 2017-05-12 [E]
 ```
 
@@ -338,7 +338,7 @@ export PACKER_APT_REPO=http://$(cd terraform/roots/apt_repo && terraform output 
 export PACKER_CA_ROOTS_PACKAGE=hashistack-ca-roots
 export PACKER_SSH_CA_PACKAGE=openssh-ca-config
 export PACKER_ENVIRONMENT=HashiStack Staging
-export AWS_REGION=us-west-2
+export AWS_REGION=us-east-1
 
 cd packer
 make base-os-config
@@ -362,7 +362,7 @@ space and performance is a good idea.
 export PACKER_VPC_ID=$(cd terraform/roots/base_vpc && terraform output vpc_id)
 export PACKER_SUBNET_ID=$(cd terraform/roots/base_vpc && terraform output public_subnet_ids | head -n 1 | tr -d ",")
 export PACKER_ENVIRONMENT=Staging
-export AWS_REGION=us-west-2
+export AWS_REGION=us-east-1
 
 cd packer
 make consul-server
@@ -389,7 +389,7 @@ make consul-servers ACTION=apply
 Once the infrastructure comes up, satisfy yourself of the following:
 
 - The Consul servers have their private IP addresses attached to a DNS A
-  record at `consul` for the VPC private hosted zone. 
+  record at `consul` for the VPC private hosted zone.
 
 - Instances in the VPC can find Consul servers by resolving `consul` using `dig
   +search consul`.
@@ -404,6 +404,6 @@ Once the infrastructure comes up, satisfy yourself of the following:
 [teamcity]: https://www.jetbrains.com/teamcity/
 [jenkins]: https://jenkins.io/index.html
 [sshcert]: https://support.ssh.com/manuals/server-admin/64/userauth-cert.html
-[zfspost]: https://operator-error.com/2017/03/02/building-zfs-root-ubuntu-amis-with-packer/
+[zfspost]: https://immutability.io/2017/03/02/building-zfs-root-ubuntu-amis-with-packer/
 [fpm]: https://github.com/jordansissel/fpm
 [debs3]: https://github.com/krobertson/deb-s3

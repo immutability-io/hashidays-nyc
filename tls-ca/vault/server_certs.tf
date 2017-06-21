@@ -8,8 +8,8 @@ resource "tls_cert_request" "server" {
 	private_key_pem = "${tls_private_key.server.private_key_pem}"
 
 	subject {
-		common_name = "vault.hashistack.gentec-systems.com"
-		organization = "Operator Error"
+		common_name = "vault.hashistack.immutability.io"
+		organization = "Cypherhat"
 		organizational_unit = "Operations"
 	}
 
