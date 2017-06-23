@@ -1,6 +1,6 @@
 default: help
 
-STATE_BUCKET = hashistack-aws-state
+STATE_BUCKET = immutability-hashistack-state
 REGION = us-east-1
 
 TLS_BUCKET = $(shell cd ../terraform/roots/account_bootstrap && terraform output tls_key_bucket_name)
